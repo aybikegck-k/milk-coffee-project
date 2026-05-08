@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILK&COFFEE | Kahve Menüsü</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+  
+    <nav class="navbar">
+        <div class="logo">MILK&COFFEE</div>
+        <ul>
+            <li><a href="#" onclick="sayfaGoster('hero')">ANA SAYFA</a></li>
+            <li><a href="#" onclick="sayfaGoster('hakkimizda')">HAKKIMIZDA</a></li> 
+            <li><a href="#" onclick="sayfaGoster('iletisim')">İLETİŞİM & TAKİP</a></li>
+             
+        </ul>
+    </nav>
+
+    <header id="hero" class="sayfa hero">
+        <div class="hero-content">
+            <button class="btn" onclick="sayfaGoster('menu-start')">MENÜYÜ GÖR</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu-start" class="sayfa menu">
+            <h2>KATEGORİLER</h2>
+            <div class="category-boxes">
+                <a href="#" onclick="sayfaGoster('hot')" class="box hot" style="background-image: url('images/sıcak.jpg');">☕ SICAK KAHVELER</a>
+                <a href="#" onclick="sayfaGoster('cold')" class="box cold" style="background-image: url('images/buz.jpg.jpg');">🧊 SOĞUK KAHVELER</a>
+                <a href="#" onclick="sayfaGoster('dessert')" class="box dessert" style="background-image: url('images/tatlı.jpg.jpg');">🍰 TATLILAR</a>
+                <a href="#" onclick="sayfaGoster('tea')" class="box tea" style="background-image: url('images/genelçay.jpg.jpg');">🫖 ÇAYLAR</a>
+                <a href="#" onclick="sayfaGoster('fruit')" class="box fruit" style="background-image: url('images/sm.jpg.jpg');">🍹 BUZLU LEZZETLER</a>
+                <a href="#" onclick="sayfaGoster('sandvic')" class="box sandviç" style="background-image: url('images/sandvicgenel.jpg');">🥪 SANDVİÇLER</a>
+            </div>
+        </section>
+
+        <div id="hot" class="sayfa section">
+            <button class="btn" onclick="sayfaGoster('menu-start')" style="margin-bottom: 20px;">← Menüye Dön</button>
+            
+            <div class="menu-grid">
+                <div class="card" style="background-image: url('images/latte.jpg.jpg');"><h3>Latte</h3><p>Süt+Espresso</p><span>160₺</span></div>
+                <div class="card" style="background-image: url('images/filtrekahve.jpg.jpg');"><h3>Filtre Kahve</h3><p>Demleme Kahve</p><span>105₺</span></div>
+                <div class="card" style="background-image: url('images/espresso.jpg.jpg');"><h3>Espresso</h3><p>Yoğun kıvamlı kahve</p><span>95₺</span></div>
+                <div class="card" style="background-image: url('images/cappuccino.jpg.jpg');"><h3>Cappuccino</h3><p>Espresso+Süt+Süt Köpüğü</p><span>170₺</span></div>
+                <div class="card" style="background-image: url('images/mocha.jpg.jpg');"><h3>Mocha</h3><p>Espresso+Süt+Çikolata Şurubu</p><span>175₺</span></div>
+                <div class="card" style="background-image: url('images/turkishcoffee.jpg.jpg');"><h3>Türk Kahvesi</h3><p>Geleneksel</p><span>150₺</span></div>
+            </div>
+        </div>
+
+        <div id="cold" class="sayfa section">
+            <button class="btn" onclick="sayfaGoster('menu-start')" style="margin-bottom: 20px;">← Menüye Dön</button>
+            
+            <div class="menu-grid">
+                <div class="card" style="background-image: url('images/icedlatte.jpg.jpg');"><h3>Iced Latte</h3><p>Buz+Süt+Espresso</p><span>165₺</span></div>
+                <div class="card" style="background-image: url('images/coldbrew.jpg.jpg');"><h3>Cold Brew</h3><p>Soğuk Demleme</p><span>110₺</span></div>
+                <div class="card" style="background-image: url('images/icedamericano.jpg.jpg');"><h3>Iced Americano</h3><p>Espresso+Su+Buz</p><span>115₺</span></div>
+                <div class="card" style="background-image: url('images/frappe.jpg.jpg');"><h3>Frappe</h3><p>Granül Kahve+Şeker+Süt</p><span>170₺</span></div>
+                <div class="card" style="background-image: url('images/affogato.jpg.jpg');"><h3>Affogato</h3><p>Dondurma+Espresso</p><span>180₺</span></div>
+                <div class="card" style="background-image: url('images/matcha.jpg');"><h3>Iced Matcha Latte</h3><p>Matcha Tozu+Süt Köpüğü+Su</p><span>210₺</span></div>
+            </div>
+        </div>
+
+        <div id="dessert" class="sayfa section">
+            <button class="btn" onclick="sayfaGoster('menu-start')" style="margin-bottom: 20px;">← Menüye Dön</button>
+            
+            <div class="menu-grid">
+                <div class="card" style="background-image: url('images/cheesecake.jpg.jpg');"><h3>Cheesecake</h3><span>200₺</span></div>
+                <div class="card" style="background-image: url('images/browine.jpg.jpg');"><h3>Brownie</h3><span>180₺</span></div>
+                <div class="card" style="background-image: url('images/magnolia.jpg.jpg');"><h3>Magnolia</h3><span>195₺</span></div>
+                <div class="card" style="background-image: url('images/tiramisu.jpg.jpg');"><h3>Tiramisu</h3><span>210₺</span></div>
+                <div class="card" style="background-image: url('images/profiterol.jpg.jpg');"><h3>Profiterol</h3><span>175₺</span></div>
+                <div class="card" style="background-image: url('images/strawberrycake.jpg.jpg');"><h3>Çilekli Pasta</h3><span>250₺</span></div>
+            </div>
+        </div>
+
+        <div id="tea" class="sayfa section">
+            <button class="btn" onclick="sayfaGoster('menu-start')" style="margin-bottom: 20px;">← Menüye Dön</button>
+            
+            <div class="menu-grid">
+                <div class="card" style="background-image: url('images/çay.jpg.jpg');"><h3>Çay</h3><span>50₺</span></div>
+                <div class="card" style="background-image: url('images/ıhlamur.jpg.jpg');"><h3>Ihlamur Çayı</h3><span>120₺</span></div>
+                <div class="card" style="background-image: url('images/adaçayı.jpg.jpg');"><h3>Adaçayı</h3><span>120₺</span></div>
+                <div class="card" style="background-image: url('images/safran.jpg.jpg');"><h3>Safran Çayı</h3><span>150₺</span></div>
+                <div class="card" style="background-image: url('images/papatya.jpg.jpg');"><h3>Papatya Çayı</h3><span>120₺</span></div>
+                <div class="card" style="background-image: url('images/nanelimon.jpg.png');"><h3>Nane+Limon Çayı</h3><span>150₺</span></div>
+            </div>
+        </div>
+
+        <div id="fruit" class="sayfa section">
+            <button class="btn" onclick="sayfaGoster('menu-start')" style="margin-bottom: 20px;">← Menüye Dön</button>
+            
+            <div class="menu-grid">
+                <div class="card" style="background-image: url('images/çileksmoothie.jpg.jpg');"><h3>Çilekli Smoothie</h3><span>250₺</span></div>
+                <div class="card" style="background-image: url('images/liom+kivismoothie.jpg.jpg');"><h3>Limon Kivi</h3><span>250₺</span></div>
+                <div class="card" style="background-image: url('images/ahududufrozen.jpg.jpg');"><h3>Ahududu Frozen</h3><span>280₺</span></div>
+                <div class="card" style="background-image: url('images/limonfrozen.jpg.jpg');"><h3>Limon Frozen</h3><span>280₺</span></div>
+                <div class="card" style="background-image: url('images/portakl.jpg.jpg');"><h3>Portakal Suyu</h3><span>275₺</span></div>
+                <div class="card" style="background-image: url('images/karısık.jpg.jpg');"><h3>Atom</h3><span>300₺</span></div>
+            </div>
+        </div>
+
+        <div id="sandvic" class="sayfa section">
+            <button class="btn" onclick="sayfaGoster('menu-start')" style="margin-bottom: 20px;">← Menüye Dön</button>
+            
+            <div class="menu-grid">
+                <div class="card" style="background-image: url('images/hindifüme.jpg');"><h3>Hindi Fümeli Baget</h3><p>Hindi Füme + Kaşar + Marul</p><span>315₺</span></div>
+                <div class="card" style="background-image: url('images/mozzarella.jpg');"><h3>Mozzarella Sandviç</h3><p>Roka + Domates + Sos</p><span>300₺</span></div>
+                <div class="card" style="background-image: url('images/simit.jpg');"><h3>Simit Sandviç</h3><p>Beyaz Peynir+Domates</p><span>290₺</span></div>
+                <div class="card" style="background-image: url('images/avokado.jpg');"><h3>Avokadolu Sandviç</h3><p>Yumurta + Avokado</p><span>350₺</span></div>
+                <div class="card" style="background-image: url('images/karışık.png');"><h3>Full Karışık</h3><p>Jambon + Pastırma + Yumurta</p><span>400₺</span></div>
+                <div class="card" style="background-image: url('images/focaccia.jpg');"><h3>Focaccia</h3><p>Zeytin+Sos</p><span>375₺</span></div>
+            </div>
+        </div>
+
+        <section id="hakkimizda" class="sayfa info-section">
+    <h2>HAKKIMIZDA</h2>
+    
+    <div class="about-text">
+        <p><strong>MILK&COFFEE: Bir Fincan Mutluluk, Bir Ömür Hatıra</strong></p>
+        
+        <p>Her şey, taze kavrulmuş kahve çekirdeklerinin o büyüleyici kokusuna duyduğumuz tutkuyla başladı. MILK&COFFEE olarak yola çıkarken tek bir hayalimiz vardı: Şehrin gürültüsünden uzaklaşıp kendinizi evinizde hissedeceğiniz, her yudumda huzuru, her lokmada mutluluğu bulabileceğiniz sıcak bir durak oluşturmak.</p>
+        <p>Kapımızdan içeri adım attığınız anda sizi saran kahve kokusu, loş ışıklar, huzurlu atmosfer ve samimi gülümsemelerle yalnızca bir kafeye değil; anılar biriktireceğiniz özel bir dünyaya davetlisiniz. Çünkü bizce kahve, sadece içilen bir içecek değil; dost sohbetlerinin, uzun ders molalarının, yeni başlangıçların ve unutulmaz anların en güzel eşlikçisidir.</p>
+        <h3>Sanatımız: Kahve</h3>
+        <p>Bizim için kahve yalnızca bir tarif değil, başlı başına bir sanat formudur. Dünyanın en seçkin kahve tarlalarından özenle seçtiğimiz çekirdekleri ustalıkla kavuruyor, her fincanda en doğru aromayı yakalamak için büyük bir titizlikle çalışıyoruz. Espresso’nun yoğun karakterinden latte’nin yumuşak dokusuna, filtre kahvenin huzur veren kokusundan özel tariflerimize kadar her içeceğimizde kaliteyi ve tutkuyu hissedersiniz.</p>
+
+        <h3>Sadece Kahve Değil, Bir Deneyim</h3>
+        <p>MILK&COFFEE’de sadece kahvenizle değil, günün her saatine eşlik eden lezzetlerimizle de yanınızdayız. Kendi mutfağımızda özenle hazırladığımız sandviçlerimiz, taptaze tatlılarımız, sıcak fırın ürünlerimiz ve özel tariflerimizle her damak zevkine hitap ediyoruz. Her ürünümüzde doğallığı, tazeliği ve kaliteyi ön planda tutuyor; misafirlerimize sıradan bir mola değil, keyif dolu bir deneyim sunuyoruz.
+
+Ders çalışırken size sakin bir köşe, arkadaşlarınızla kahkahalar paylaşacağınız sıcak bir ortam ya da sadece kendinizle baş başa kalabileceğiniz huzurlu bir an… MILK&COFFEE, günün her anında size eşlik etmek için burada.</p>
+
+        <p style="margin-top: 20px; font-weight: 600; color: #ffffff;">
+            Sütlü dokunuşların kahveyle en asil buluşması; MILK&COFFEE ailesi olarak sizi her gün bu eşsiz deneyimi paylaşmaya bekliyoruz.
+        </p>
+    </div>
+
+</section>
+       <section id="iletisim" class="sayfa info-section">
+    <div class="contact-container">
+        <h2>İletişim</h2>
+        <form>
+            <input type="text" placeholder="Adınız Soyadınız">
+            <input type="email" placeholder="E-posta Adresiniz">
+            <textarea placeholder="Mesajınız"></textarea>
+            <button type="submit" class="btn">Gönder</button>
+        </form>
+    </div>
+
+
+<!-- Takip Edin Bölümü -->
+    
+    <div class="social-box">
+    <h3>Bizi Takip Edin</h3>
+    <div class="social-container">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+</div>
+</section>
+    
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
