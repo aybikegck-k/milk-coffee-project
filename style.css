@@ -94,7 +94,7 @@ body {
 /* 5. BUTONLAR */
 .btn {
     display: inline-block;
-    padding: 30px 80px;
+    padding: 20px 60px;
     background: #280e01;
     color: white;
     text-decoration: none;
@@ -275,7 +275,7 @@ body {
 /* Hakkımızda içindeki başlığı da kutuyla uyumlu büyütelim */
 .about-text h2 {
     font-size: 3rem;   
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     
 }
 
@@ -283,12 +283,12 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
 }
 
 input, textarea {
-    padding: 52px;
+    padding: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-family: inherit;
@@ -296,7 +296,7 @@ input, textarea {
 }
 
 textarea {
-    min-height: 100px;
+    min-height: 80px;
     resize: none;
 }
 
