@@ -67,7 +67,6 @@ body {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Sayfayı en tepeden başlatır */
 }
 
 /* 4. HERO SECTION (Layout 1) */
@@ -105,10 +104,9 @@ body {
 /* Kategori kutuları ve Ürün kartları için ortak grid yapısı */
 .category-boxes, .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 sütunlu yapı */
     gap: 25px;
     justify-items: center;
-    align-items: start; /* KARTLARIN AŞAĞI DOĞRU SÜNMEMESİNİ SAĞLAR */
     max-width: 1100px;
     margin: 0 auto 50px;
     padding: 20px;
@@ -136,8 +134,8 @@ body {
 
 /* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
 .card {
-    width: 280px;
-    height: 300px;
+    width: 320px;
+    height: 350px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -221,7 +219,7 @@ body {
 
 /* --- SADECE HAKKIMIZDA KUTUSUNU BÜYÜTEN EKLEME --- */
 .about-text {
-    max-width: 1000px;   /* Genişliği 1000'den 1300'e çıkardık */
+    max-width: 1200px;   /* Genişliği 1000'den 1300'e çıkardık */
     min-height: 600px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
     padding: 60px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
     font-size: 1.15rem;  /* Yazıları bir tık büyüterek kutuyu doldurduk */
