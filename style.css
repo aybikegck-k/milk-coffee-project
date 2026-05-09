@@ -1,4 +1,3 @@
-/* 1. RESET & GENEL AYARLAR */
 * {
     margin: 0;
     padding: 0;
@@ -8,56 +7,33 @@
 body {
     background-image: url('images/arka2.png');
     background-size: cover;
-    background-attachment: scroll; /* GitHub Pages fix */
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     font-family: 'Poppins', sans-serif;
-    color: #333;
     overflow-x: hidden;
+    color: #333;
 }
 
-/* 2. NAVBAR */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     color: white;
     position: fixed;
     width: 100%;
     z-index: 1000;
 }
 
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    font-weight: 600;
-}
-
-.navbar a:hover {
-    color: #d7ccc8;
-}
-
-/* 3. SAYFALAR */
+/* SAYFA SYSTEM */
 .sayfa {
     display: none;
     width: 100%;
     min-height: 100vh;
     padding-top: 100px;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .aktif {
@@ -67,52 +43,30 @@ body {
     width: 100%;
 }
 
-/* 4. HERO */
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/genel.png');
-    background-size: cover;
-    background-position: center;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-/* 5. BUTTON */
-.btn {
-    display: inline-block;
-    padding: 12px 35px;
-    background: #6d4c41;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    cursor: pointer;
-    border: none;
-}
-
-.btn:hover {
-    background: #5d4037;
-    transform: translateY(-3px);
-}
-
-/* 6. GRID */
+/* GRID FIX (EN ÖNEMLİ KISIM) */
 .category-boxes,
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
-    justify-items: center;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto 50px;
     padding: 20px;
+    justify-items: center;
 }
 
-/* 7. BOX */
+/* BOX */
 .box {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 350px;
     border-radius: 20px;
     position: relative;
@@ -122,19 +76,16 @@ body {
     align-items: center;
     background-size: cover;
     background-position: center;
-    transition: 0.4s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-decoration: none;
     color: white;
     font-weight: 600;
-    font-size: 1.2rem;
+    text-align: center;
 }
 
-/* 8. CARD (DÜZELTİLDİ - EN ÖNEMLİ KISIM) */
+/* CARD (FIXLENDİ) */
 .card {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     min-height: 350px;
-    height: auto;
 
     border-radius: 20px;
     position: relative;
@@ -144,70 +95,58 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: flex-start;
 
     padding: 20px;
     gap: 10px;
 
+    color: white;
     background-size: cover;
     background-position: center;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-
-    color: white;
-    z-index: 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* CARD İÇERİKLERİ */
-.card > * {
-    position: relative;
-    z-index: 2;
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 15px;
-    display: block;
-}
-
-/* DARK OVERLAY */
+/* overlay fix */
 .box::before,
 .card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0,0,0,0.55);
+    z-index: 0;
+}
+
+.card > * ,
+.box > * {
+    position: relative;
     z-index: 1;
 }
 
-/* TEXT */
-.card h3 {
-    font-size: 1.5rem;
+/* IMG */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-.card p {
-    font-size: 0.95rem;
-    max-height: 60px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* BUTTON */
+.btn {
+    padding: 12px 30px;
+    background: #6d4c41;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.card span {
-    font-weight: 600;
-    background: rgba(109, 76, 65, 0.9);
-    padding: 5px 15px;
-    border-radius: 12px;
+.btn:hover {
+    transform: translateY(-3px);
+    background: #5d4037;
 }
 
-/* HOVER */
-.box:hover,
-.card:hover {
-    transform: scale(1.03);
-}
-
-/* 9. INFO SECTIONS */
+/* INFO SECTIONS */
 .info-section {
     display: flex;
     flex-direction: column;
@@ -224,70 +163,5 @@ body {
     background: rgba(43, 27, 11, 0.9);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     color: white;
-    line-height: 1.8;
-}
-
-/* ABOUT TEXT */
-.about-text {
-    max-width: 1200px;
-    min-height: 600px;
-    padding: 60px;
-    font-size: 1.15rem;
-}
-
-.about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-/* FORM */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-input,
-textarea {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-textarea {
-    min-height: 120px;
-    resize: none;
-}
-
-/* SOCIAL */
-.social-container {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.social-container a {
-    text-decoration: none;
-    color: #dec5c5;
-    border: 2px solid #dec5c5;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    transition: all 0.4s ease;
-}
-
-.social-container a:hover {
-    background: #dec5c5;
-    color: #2b1b0b;
-    transform: translateY(-10px);
 }
