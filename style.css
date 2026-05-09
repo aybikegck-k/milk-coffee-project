@@ -137,8 +137,11 @@ body {
 .card {
     width: 320px;
    
+ 
   min-height: 350px;
-  max-height: 400px; /* içerik taşarsa sınır koy */
+  height: auto; /* sabit yerine içerik uyumlu */
+
+/* içerik taşarsa sınır koy */
 
 
     border-radius: 20px;
@@ -159,7 +162,7 @@ body {
     background-position: center;
 
     
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
 
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -171,9 +174,11 @@ body {
 }
 .card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
+  display: block; /* inline boşlukları engeller */
 }
+
 
 /* Ortak Karartma Katmanı */
 .box::before, .card::before {
