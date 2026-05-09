@@ -135,7 +135,7 @@ body {
 /* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
 .card {
     width: 250px;
-    height: 2500px;
+    height: 250px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
