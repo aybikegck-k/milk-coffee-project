@@ -21,9 +21,6 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     overflow-x: hidden; /* Sayfanın sağa kaymasını engeller */
-  
-   
-
 }
 
 /* 2. NAVIGASYON (NAVBAR) */
@@ -102,46 +99,42 @@ body {
     font-weight: 1000;
     background: rgba(40, 14, 1, 0.4); 
     border: 1px solid rgba(255, 255, 255, 0.3);
-   backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
     transition: 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     cursor: pointer;
     border: none;
     margin-top: 10px;
-    
 }
 
 .btn:hover {
     background: #2b1a15;
-    
 }
 
 /* 6. GRID SİSTEMLERİ (Layout 2 & 3) */
-/* Kategori kutuları ve Ürün kartları için ortak grid yapısı */
-.category-boxes{ display: grid;
+.category-boxes{ 
+    display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 sütunlu yapı */
     gap: 20px;
     width: 100%;
     max-width: 1100px;
-    
     padding: 20px;
-     justify-items: center;
-     align-items:start;}
- .menu-grid {
+    justify-items: center;
+    align-items:start;
+}
+
+.menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 sütunlu yapı */
     gap: 10px;
     width: 100%;
     max-width: 1000px;
-    
     padding: 10px;
-     justify-items: center;
-     align-items:start;
-     
- 
+    justify-items: center;
+    align-items:start;
 }
 
-/* 1. ANA KATEGORİ KUTULARI (Girişteki 6 kutu) */
+/* 7. ANA KATEGORİ KUTULARI & ÜRÜN KARTLARI */
 .box {
     width: 300px;
     height: 290px;
@@ -159,44 +152,28 @@ body {
     color: white;
     font-weight: 600;
     font-size: 1.2rem;
-  
 }
 
-/* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
 .card {
     width: 100%;
     max-width: 300px;
-   
     height: 270px; 
     overflow: hidden;
-
     border-radius: 20px;
     position: relative;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-
     padding: 10px;
     gap: 10px;
-
-
     background-size: cover;
     background-position: center;
-
-    
-   
-
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-
     color: white;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    
 }
-
-
 
 /* Ortak Karartma Katmanı */
 .box::before, .card::before {
@@ -207,7 +184,7 @@ body {
     z-index: 0;
 }
 
-/* Kart İçindeki Yazıların Stilleri (Kaymayı engelleyen kısım) */
+/* Kart İçindeki Yazıların Stilleri */
 .card h3 {
     position: relative;
     z-index: 1;
@@ -220,11 +197,9 @@ body {
     z-index: 1;
     font-size: 0.9rem;
     font-weight: 400;
-
     max-height: 60px;
     overflow: hidden;      /* 🔥 KRİTİK */
     text-overflow: ellipsis;
-
     margin-bottom: 12px;
     max-width: 90%;
 }
@@ -243,7 +218,7 @@ body {
     transform: scale(1.03);
 }
 
-/* 7. İÇERİK BÖLÜMLERİ (Hakkımızda & İletişim Layout 4 & 5) */
+/* 8. İÇERİK BÖLÜMLERİ (Hakkımızda & İletişim) */
 .info-section {
     display: flex;
     flex-direction: column;
@@ -253,7 +228,6 @@ body {
     padding: 50px 20px;
 }
 
-/* Ortak özellikleri koruyoruz (Senin attığın kısım kalsın) */
 .about-text, .contact-container, .social-box {
     width: 100%;
     max-width: 1000px;
@@ -263,25 +237,21 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     color: #ffffff;
     line-height: 1.8;
-    
 }
 
-/* --- SADECE HAKKIMIZDA KUTUSUNU BÜYÜTEN EKLEME --- */
 .about-text {
-    max-width: 800px;   /* Genişliği 1000'den 1300'e çıkardık */
-    min-height: 300px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
-    padding: 10px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
-    font-size: 1.15rem;  /* Yazıları bir tık büyüterek kutuyu doldurduk */
+    max-width: 800px;
+    min-height: 300px;
+    padding: 10px;
+    font-size: 1.15rem;
 }
 
-/* Hakkımızda içindeki başlığı da kutuyla uyumlu büyütelim */
 .about-text h2 {
-    font-size: 3rem;   
+    font-size: 3rem; 
     margin-bottom: 20px;
-    
 }
 
-/* 8. FORM ELEMANLARI */
+/* 9. FORM ELEMANLARI */
 form {
     display: flex;
     flex-direction: column;
@@ -302,7 +272,7 @@ textarea {
     resize: none;
 }
 
-/* 9. SOSYAL MEDYA (Layout 5 Detay) */
+/* 10. SOSYAL MEDYA */
 .social-container {
     display: flex;
     gap: 25px;
@@ -329,26 +299,31 @@ textarea {
     color: #2b1b0b;
     transform: translateY(-10px) rotate(360deg);
 }
-/* 1. Menünün başlangıç durumu: Şeffaf ve tıklanamaz */
+
+/* 11. MOBİL MENÜ & ICON */
+.menu-icon {
+    cursor: pointer;
+    position: relative; /* z-index için gerekli */
+    z-index: 1001;
+    font-size: 30px; 
+    color: white;
+}
+
 .mobile-menu {
     position: absolute;
-    top: 45px; /* Butonun hemen altına */
+    top: 45px; 
     right: 15px;
     background: rgb(59, 25, 25);
     padding: 10px 30px;
     border-radius: 2px;
-    
-    /* GİZLEME VE GÖSTERME MANTIĞI */
-    opacity: 0;                /* Şeffaf yap */
-    pointer-events: none;       /* Üzerine tıklanmasını engelle */
-    transition: opacity 0.3s ease-in-out; /* Hafif bir açılma animasyonu */
-    
-    /* TASARIM VE KONUMLANDIRMA */
-    display: flex; /* İçeriği flex ile diz */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
     flex-direction: column;
     gap: 8px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    z-index: 1000; /* Diğer her şeyin üstünde görünsün */
+    z-index: 1000;
 }
 
 .mobile-menu li a {
@@ -356,23 +331,23 @@ textarea {
     text-decoration: none;
     padding: 2px 3px;
     display: block;
-    
-    /* YAZI AYARLARI */
-    font-size: 25px;       /* Yazının boyutunu buradan artırabilirsin (örn: 20px, 22px) */
-    font-weight: 600;      /* Yazıyı biraz kalınlaştırır, daha şık durur */
-    font-family: 'Poppins', sans-serif; /* Eğer sitende özel bir font varsa buraya yazabilirsin */
-}
-/* 2. Tıklandığında (.active class'ı gelince) durumu: Görünür ve tıklanabilir */
-.mobile-menu.active {
-    opacity: 1;                /* Tam görünür yap */
-    pointer-events: auto;       /* Üzerine tıklanmasını sağla */
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* 3. Butonun (çizgilerin) tıklanabilir olduğundan emin ol */
-.menu-icon {
-    cursor: pointer;
-    position: relative; /* z-index için gerekli */
-    z-index: 1001;
-    font-size: 30px; /* Buradaki değeri artırarak çizgileri büyütebilirsin */
-    color: white;      /* Menüden de üstte olmalı */
+.mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Telefonlar için küçük bir dokunuş */
+@media (max-width: 768px) {
+    .category-boxes, .menu-grid {
+        grid-template-columns: 1fr; /* Mobilde her şey alt alta gelsin */
+    }
+    
+    .navbar ul {
+        display: none; /* Masaüstü menüsünü mobilde gizle (zaten mobil menün var) */
+    }
 }
