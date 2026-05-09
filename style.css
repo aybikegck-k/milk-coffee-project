@@ -71,7 +71,7 @@ body {
 
 /* 4. HERO SECTION (Layout 1) */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/genel2.jpg.png');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/genel.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -134,8 +134,8 @@ body {
 
 /* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
 .card {
-    width: 320px;
-    height: 350px;
+    width: 250px;
+    height: 2500px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -219,7 +219,7 @@ body {
 
 /* --- SADECE HAKKIMIZDA KUTUSUNU BÜYÜTEN EKLEME --- */
 .about-text {
-    max-width: 1200px;   /* Genişliği 1000'den 1300'e çıkardık */
+    max-width: 1000px;   /* Genişliği 1000'den 1300'e çıkardık */
     min-height: 600px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
     padding: 60px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
     font-size: 1.15rem;  /* Yazıları bir tık büyüterek kutuyu doldurduk */
