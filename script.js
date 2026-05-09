@@ -26,3 +26,12 @@ function sayfaGoster(id) {
     // 4. Her tıklamada ekranın en başına çık (Scroll kalmasın)
     window.scrollTo(0, 0);
 }
+// HTML'deki buton ve menü elementlerini bul
+const menuIcon = document.querySelector('.menu-icon');
+const mobileMenu = document.querySelector('#mobileMenu');
+
+// Butona tıklanınca çalışacak fonksiyon
+menuIcon.addEventListener('click', function() {
+    // Menüye .active class'ını ekle veya varsa çıkar
+    mobileMenu.classList.toggle('active');
+});

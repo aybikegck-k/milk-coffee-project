@@ -31,6 +31,7 @@ body {
     position: fixed; /* Sayfa aksa da menü en üstte sabit kalır */
     width: 100%;
     z-index: 1000;
+    font-size: 30px;
 }
 
 .navbar ul {
@@ -112,10 +113,11 @@ body {
     gap: 20px;
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto 80px;
+    margin: 0 auto 50px;
     padding: 20px;
      justify-items: center;
      align-items:start;
+     
 }
 
 /* 1. ANA KATEGORİ KUTULARI (Girişteki 6 kutu) */
@@ -231,7 +233,7 @@ body {
 
 /* Ortak özellikleri koruyoruz (Senin attığın kısım kalsın) */
 .about-text, .contact-container, .social-box {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     background: rgba(43, 27, 11, 0.9);
     padding: 40px;
@@ -239,32 +241,34 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     color: #ffffff;
     line-height: 1.8;
+    
 }
 
 /* --- SADECE HAKKIMIZDA KUTUSUNU BÜYÜTEN EKLEME --- */
 .about-text {
-    max-width: 1200px;   /* Genişliği 1000'den 1300'e çıkardık */
-    min-height: 600px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
+    max-width: 1300px;   /* Genişliği 1000'den 1300'e çıkardık */
+    min-height: 400px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
     padding: 60px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
     font-size: 1.15rem;  /* Yazıları bir tık büyüterek kutuyu doldurduk */
 }
 
 /* Hakkımızda içindeki başlığı da kutuyla uyumlu büyütelim */
 .about-text h2 {
-    font-size: 2.5rem;   
+    font-size: 3rem;   
     margin-bottom: 30px;
+    
 }
 
 /* 8. FORM ELEMANLARI */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     width: 100%;
 }
 
 input, textarea {
-    padding: 15px;
+    padding: 52px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-family: inherit;
@@ -272,7 +276,7 @@ input, textarea {
 }
 
 textarea {
-    min-height: 120px;
+    min-height: 100px;
     resize: none;
 }
 
@@ -289,7 +293,7 @@ textarea {
     color: #dec5c5;
     border: 2px solid #dec5c5;
     width: 60px;
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -302,4 +306,51 @@ textarea {
     background: #dec5c5;
     color: #2b1b0b;
     transform: translateY(-10px) rotate(360deg);
+}
+/* 1. Menünün başlangıç durumu: Şeffaf ve tıklanamaz */
+.mobile-menu {
+    position: absolute;
+    top: 60px; /* Butonun hemen altına */
+    right: 15px;
+    background: rgb(45, 19, 19);
+    padding: 50px;
+    border-radius: 2px;
+    
+    /* GİZLEME VE GÖSTERME MANTIĞI */
+    opacity: 0;                /* Şeffaf yap */
+    pointer-events: none;       /* Üzerine tıklanmasını engelle */
+    transition: opacity 0.3s ease-in-out; /* Hafif bir açılma animasyonu */
+    
+    /* TASARIM VE KONUMLANDIRMA */
+    display: flex; /* İçeriği flex ile diz */
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    z-index: 1000; /* Diğer her şeyin üstünde görünsün */
+}
+
+.mobile-menu li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    
+    /* YAZI AYARLARI */
+    font-size: 25px;       /* Yazının boyutunu buradan artırabilirsin (örn: 20px, 22px) */
+    font-weight: 600;      /* Yazıyı biraz kalınlaştırır, daha şık durur */
+    font-family: 'Poppins', sans-serif; /* Eğer sitende özel bir font varsa buraya yazabilirsin */
+}
+/* 2. Tıklandığında (.active class'ı gelince) durumu: Görünür ve tıklanabilir */
+.mobile-menu.active {
+    opacity: 1;                /* Tam görünür yap */
+    pointer-events: auto;       /* Üzerine tıklanmasını sağla */
+}
+
+/* 3. Butonun (çizgilerin) tıklanabilir olduğundan emin ol */
+.menu-icon {
+    cursor: pointer;
+    position: relative; /* z-index için gerekli */
+    z-index: 1001;
+    font-size: 30px; /* Buradaki değeri artırarak çizgileri büyütebilirsin */
+    color: white;      /* Menüden de üstte olmalı */
 }
