@@ -36,9 +36,9 @@ body {
     color: white;
     position: fixed; /* Sayfa aksa da menü en üstte sabit kalır */
     width: 100%;
-    z-index: 1000;
+    z-index: 800;
     font-size: 1.2rem; /* Sabit 30px yerine ekranla ölçeklenen bir değer */
-    padding: 15px 5%;
+    padding: 2px 5%;
 }
 
 .navbar ul {
@@ -64,7 +64,7 @@ body {
     display: none; /* Başlangıçta hepsi gizli */
     width: 100%;
     min-height: 100vh;
-    padding-top: 80px; /* Navbar'ın altında kalmaması için boşluk */
+    padding-top: 50px; /* Navbar'ın altında kalmaması için boşluk */
     animation: fadeIn 0.5s ease; /* Sayfa değişiminde yumuşak geçiş */
 }
 
@@ -99,19 +99,21 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    font-weight: 500;
-   
+    font-weight: 1000;
+    background: rgba(40, 14, 1, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+   backdrop-filter: blur(1px);
     transition: 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     cursor: pointer;
     border: none;
-    margin-top: 100px;
+    margin-top: 10px;
     
 }
 
 .btn:hover {
-    background: #5d4037;
-    transform: translateY(-3px);
+    background: #2b1a15;
+    
 }
 
 /* 6. GRID SİSTEMLERİ (Layout 2 & 3) */
@@ -128,11 +130,11 @@ body {
  .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 sütunlu yapı */
-    gap: 20px;
+    gap: 10px;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px;
     
-    padding: 20px;
+    padding: 10px;
      justify-items: center;
      align-items:start;
      
@@ -141,8 +143,8 @@ body {
 
 /* 1. ANA KATEGORİ KUTULARI (Girişteki 6 kutu) */
 .box {
-    width: 320px;
-    height: 350px;
+    width: 300px;
+    height: 290px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -163,9 +165,9 @@ body {
 /* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
 .card {
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
    
-    height: 380px; 
+    height: 270px; 
     overflow: hidden;
 
     border-radius: 20px;
@@ -177,7 +179,7 @@ body {
     justify-content: space-between;
     text-align: center;
 
-    padding: 20px;
+    padding: 10px;
     gap: 10px;
 
 
@@ -232,7 +234,7 @@ body {
     z-index: 1;
     font-weight: 600;
     background: rgba(109, 76, 65, 0.9); /* Fiyatı belirginleştirir */
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 12px;
 }
 
@@ -266,9 +268,9 @@ body {
 
 /* --- SADECE HAKKIMIZDA KUTUSUNU BÜYÜTEN EKLEME --- */
 .about-text {
-    max-width: 1000px;   /* Genişliği 1000'den 1300'e çıkardık */
+    max-width: 800px;   /* Genişliği 1000'den 1300'e çıkardık */
     min-height: 300px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
-    padding: 60px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
+    padding: 10px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
     font-size: 1.15rem;  /* Yazıları bir tık büyüterek kutuyu doldurduk */
 }
 
@@ -288,7 +290,7 @@ form {
 }
 
 input, textarea {
-    padding: 30px;
+    padding: 8px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-family: inherit;
@@ -313,7 +315,7 @@ textarea {
     color: #dec5c5;
     border: 2px solid #dec5c5;
     width: 60px;
-    height: 70px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -330,10 +332,10 @@ textarea {
 /* 1. Menünün başlangıç durumu: Şeffaf ve tıklanamaz */
 .mobile-menu {
     position: absolute;
-    top: 60px; /* Butonun hemen altına */
+    top: 45px; /* Butonun hemen altına */
     right: 15px;
-    background: rgb(45, 19, 19);
-    padding: 50px;
+    background: rgb(59, 25, 25);
+    padding: 10px 30px;
     border-radius: 2px;
     
     /* GİZLEME VE GÖSTERME MANTIĞI */
@@ -352,7 +354,7 @@ textarea {
 .mobile-menu li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 2px 3px;
     display: block;
     
     /* YAZI AYARLARI */
