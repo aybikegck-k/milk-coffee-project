@@ -105,8 +105,9 @@ body {
 .category-boxes, .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 sütunlu yapı */
-    gap: 25px;
+    gap: 20px;
     justify-items: center;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto 50px;
     padding: 20px;
@@ -159,6 +160,7 @@ body {
     color: white;
 
     z-index: 1; /* 🔥 EKLENDİ */
+    flex: 0 0 320px;
 }
 
 /* Ortak Karartma Katmanı */
