@@ -1,5 +1,4 @@
 /* 1. RESET & GENEL AYARLAR */
-/* Tüm tarayıcıların varsayılan boşluklarını sıfırlıyoruz */
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +6,17 @@
 }
 
 body {
-    background-image: url('images/arka2.png.png');
+    background-image: url('images/arka2.png');
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll; /* GitHub Pages fix */
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Poppins', sans-serif;
     color: #333;
-    overflow-x: hidden; /* Sayfanın sağa kaymasını engeller */
+    overflow-x: hidden;
 }
 
-/* 2. NAVIGASYON (NAVBAR) */
+/* 2. NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -25,7 +24,7 @@ body {
     padding: 20px 50px;
     background: rgba(0,0,0,0.8);
     color: white;
-    position: fixed; /* Sayfa aksa da menü en üstte sabit kalır */
+    position: fixed;
     width: 100%;
     z-index: 1000;
 }
@@ -47,14 +46,13 @@ body {
     color: #d7ccc8;
 }
 
-/* 3. SAYFA YAPISI & ANIMASYONLAR */
-/* JavaScript ile geçiş yaptığımız tüm sayfaların temel stili */
+/* 3. SAYFALAR */
 .sayfa {
-    display: none; /* Başlangıçta hepsi gizli */
+    display: none;
     width: 100%;
     min-height: 100vh;
-    padding-top: 100px; /* Navbar'ın altında kalmaması için boşluk */
-    animation: fadeIn 0.5s ease; /* Sayfa değişiminde yumuşak geçiş */
+    padding-top: 100px;
+    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -62,25 +60,24 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Aktif olan sayfanın görünmesini sağlar */
 .aktif {
     display: flex !important;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
-/* 4. HERO SECTION (Layout 1) */
+/* 4. HERO */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/genel.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-/* 5. BUTONLAR */
+/* 5. BUTTON */
 .btn {
     display: inline-block;
     padding: 12px 35px;
@@ -100,11 +97,11 @@ body {
     transform: translateY(-3px);
 }
 
-/* 6. GRID SİSTEMLERİ (Layout 2 & 3) */
-/* Kategori kutuları ve Ürün kartları için ortak grid yapısı */
-.category-boxes, .menu-grid {
+/* 6. GRID */
+.category-boxes,
+.menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 sütunlu yapı */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
     width: 100%;
@@ -113,7 +110,7 @@ body {
     padding: 20px;
 }
 
-/* 1. ANA KATEGORİ KUTULARI (Girişteki 6 kutu) */
+/* 7. BOX */
 .box {
     width: 320px;
     height: 350px;
@@ -133,16 +130,11 @@ body {
     font-size: 1.2rem;
 }
 
-/* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
+/* 8. CARD (DÜZELTİLDİ - EN ÖNEMLİ KISIM) */
 .card {
     width: 320px;
-   
- 
-  min-height: 350px;
-  height: auto; /* sabit yerine içerik uyumlu */
-
-/* içerik taşarsa sınır koy */
-
+    min-height: 350px;
+    height: auto;
 
     border-radius: 20px;
     position: relative;
@@ -152,116 +144,105 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: flex-start;
 
     padding: 20px;
     gap: 10px;
 
-    justify-content: flex-start;
-
     background-size: cover;
     background-position: center;
-
-    
-   transition: transform 0.4s ease, box-shadow 0.4s ease;
-
 
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 
     color: white;
-
-    z-index: 1; /* 🔥 EKLENDİ */
-    flex: 0 0 320px;
+    z-index: 1;
 }
+
+/* CARD İÇERİKLERİ */
+.card > * {
+    position: relative;
+    z-index: 2;
+}
+
 .card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block; /* inline boşlukları engeller */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
 }
 
-
-/* Ortak Karartma Katmanı */
-.box::before, .card::before {
+/* DARK OVERLAY */
+.box::before,
+.card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55); 
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
 }
 
-/* Kart İçindeki Yazıların Stilleri (Kaymayı engelleyen kısım) */
+/* TEXT */
 .card h3 {
-    position: relative;
-    z-index: 1;
     font-size: 1.5rem;
-    margin-bottom: 8px; /* Başlık ile açıklama arası boşluk */
 }
 
 .card p {
-    position: relative;
-    z-index: 1;
     font-size: 0.95rem;
-    font-weight: 400;
-
     max-height: 60px;
-    overflow: hidden;      /* 🔥 KRİTİK */
+    overflow: hidden;
     text-overflow: ellipsis;
-
-    margin-bottom: 12px;
-    max-width: 90%;
 }
 
 .card span {
-    position: relative;
-    z-index: 1;
     font-weight: 600;
-    background: rgba(109, 76, 65, 0.9); /* Fiyatı belirginleştirir */
+    background: rgba(109, 76, 65, 0.9);
     padding: 5px 15px;
     border-radius: 12px;
 }
 
-/* Hover Efekti */
-.box:hover, .card:hover {
+/* HOVER */
+.box:hover,
+.card:hover {
     transform: scale(1.03);
 }
 
-/* 7. İÇERİK BÖLÜMLERİ (Hakkımızda & İletişim Layout 4 & 5) */
+/* 9. INFO SECTIONS */
 .info-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 40px; /* Bölümler arası dikey boşluk */
+    gap: 40px;
     padding: 50px 20px;
 }
 
-/* Ortak özellikleri koruyoruz (Senin attığın kısım kalsın) */
-.about-text, .contact-container, .social-box {
+.about-text,
+.contact-container,
+.social-box {
     width: 90%;
     max-width: 1000px;
     background: rgba(43, 27, 11, 0.9);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    color: #ffffff;
+    color: white;
     line-height: 1.8;
 }
 
-/* --- SADECE HAKKIMIZDA KUTUSUNU BÜYÜTEN EKLEME --- */
+/* ABOUT TEXT */
 .about-text {
-    max-width: 1200px;   /* Genişliği 1000'den 1300'e çıkardık */
-    min-height: 600px;   /* Kutunun dikeyde daha uzun durmasını sağlar */
-    padding: 60px;       /* İçerideki boşluğu artırarak daha ferah yaptık */
-    font-size: 1.15rem;  /* Yazıları bir tık büyüterek kutuyu doldurduk */
+    max-width: 1200px;
+    min-height: 600px;
+    padding: 60px;
+    font-size: 1.15rem;
 }
 
-/* Hakkımızda içindeki başlığı da kutuyla uyumlu büyütelim */
 .about-text h2 {
-    font-size: 2.5rem;   
+    font-size: 2.5rem;
     margin-bottom: 30px;
 }
 
-/* 8. FORM ELEMANLARI */
+/* FORM */
 form {
     display: flex;
     flex-direction: column;
@@ -269,7 +250,8 @@ form {
     width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -282,7 +264,7 @@ textarea {
     resize: none;
 }
 
-/* 9. SOSYAL MEDYA (Layout 5 Detay) */
+/* SOCIAL */
 .social-container {
     display: flex;
     gap: 25px;
@@ -301,11 +283,11 @@ textarea {
     justify-content: center;
     border-radius: 50%;
     font-size: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease;
 }
 
 .social-container a:hover {
     background: #dec5c5;
     color: #2b1b0b;
-    transform: translateY(-10px) rotate(360deg);
+    transform: translateY(-10px);
 }
