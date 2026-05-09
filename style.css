@@ -136,7 +136,11 @@ body {
 /* 2. ÜRÜN KARTLARI (Sandviç, Kahve vb. Detay Sayfaları) */
 .card {
     width: 320px;
-    height: 350px; /* min-height DEĞİL sabit height */
+   
+  min-height: 350px;
+  max-height: 400px; /* içerik taşarsa sınır koy */
+
+
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -154,7 +158,10 @@ body {
     background-size: cover;
     background-position: center;
 
-    transition: 0.4s ease;
+    
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 
     color: white;
