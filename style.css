@@ -35,7 +35,7 @@ body {
     width: 100%;
     z-index: 800;
     font-size: 1.2rem; /* Sabit 30px yerine ekranla ölçeklenen bir değer */
-    padding: 2px 5%;
+    padding: -3px 5%;
 }
 
 .navbar ul {
@@ -225,7 +225,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 40px; /* Bölümler arası dikey boşluk */
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
 .about-text, .contact-container, .social-box {

@@ -13,17 +13,18 @@
 
   
     <nav class="navbar">
-        <div class="logo">MILK&COFFEE</div>
-        <div class="menu-icon" onclick="menuToggle()">
-    <i class="fa-solid fa-bars"></i>
-</div>
-        <ul id="mobileMenu" class="mobile-menu">
-    <li><a href="#" onclick="sayfaGoster('hero')">Ana Sayfa</a></li>
-    <li><a href="#" onclick="sayfaGoster('hakkimizda')">Hakkımızda</a></li>
-    <li><a href="#" onclick="sayfaGoster('iletisim')">İletişim & Takip</a></li>
-</ul>
-    </nav>
+    <div class="logo">MILK&COFFEE</div>
+    
+    <div class="menu-icon" onclick="menuToggle()" style="padding: 20px; z-index: 9999;">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
+    <ul id="mobileMenu" class="mobile-menu">
+        <li><a href="javascript:void(0)" onclick="sayfaGoster('hero')">Ana Sayfa</a></li>
+        <li><a href="javascript:void(0)" onclick="sayfaGoster('hakkimizda')">Hakkımızda</a></li>
+        <li><a href="javascript:void(0)" onclick="sayfaGoster('iletisim')">İletişim & Takip</a></li>
+    </ul>
+</nav>
     <header id="hero" class="sayfa hero" style="display:flex;">
         <div class="hero-content">
             <button class="btn" onclick="sayfaGoster('menu-start')">MENÜYÜ GÖR</button>
