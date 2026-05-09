@@ -303,10 +303,13 @@ textarea {
 /* 11. MOBİL MENÜ & ICON */
 .menu-icon {
     cursor: pointer;
-    position: relative; /* z-index için gerekli */
-    z-index: 1001;
+    position: relative; 
+    z-index: 9999 !important; /* Değeri çok yükselttik ki hiçbir şeyin altında kalmasın */
     font-size: 30px; 
     color: white;
+    padding: 15px; /* Tıklama alanını genişlettik, parmakla basmak çok kolaylaşacak */
+    margin: -10px; /* Padding'in menüyü kaydırmaması için dengeledik */
+    display: inline-block;
 }
 
 .mobile-menu {
@@ -349,5 +352,15 @@ textarea {
     
     .navbar ul {
         display: none; /* Masaüstü menüsünü mobilde gizle (zaten mobil menün var) */
+    }
+}
+/* Sadece telefon ekranlarında (768px'den küçük) çalışır */
+@media (max-width: 768px) {
+    .hero {
+        /* Buraya telefonda görünmesini istediğin dikey resmin adını yaz */
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/mobil.png'); 
+        
+        background-attachment: scroll; /* Mobilde 'fixed' bazen takılma yapar, 'scroll' daha akıcıdır */
+        background-position: center;
     }
 }
