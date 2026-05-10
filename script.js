@@ -1,59 +1,80 @@
-// 1. Sayfa ilk yüklendiğinde Hero ekranı gelsin
-window.onload = function() {
-    sayfaGoster('hero'); 
+// Sayfa ilk açıldığında hero bölümü gösterilir
+window.onload = function () {
+    sayfaGoster('hero');
 };
 
-// 2. Sayfa gösterme fonksiyonu
+// Sayfalar arasında geçiş yapan fonksiyon
 function sayfaGoster(id) {
-    var sayfalar = document.getElementsByClassName('sayfa');
-    for (var i = 0; i < sayfalar.length; i++) {
+
+    // Tüm sayfaları seç
+    const sayfalar = document.getElementsByClassName('sayfa');
+
+    // Önce bütün sayfaları gizle
+    for (let i = 0; i < sayfalar.length; i++) {
         sayfalar[i].style.display = 'none';
         sayfalar[i].classList.remove('aktif');
     }
 
-    var secilenSayfa = document.getElementById(id);
-    
+    // Açılacak sayfayı seç
+    const secilenSayfa = document.getElementById(id);
+
+    // Eğer sayfa varsa göster
     if (secilenSayfa) {
-        if (id === 'hero') {
-            secilenSayfa.style.display = 'flex'; 
-        } else {
-            secilenSayfa.style.display = 'block'; 
-        }
+
+        // Hero kısmı flex olduğu için ayrı kontrol
+        secilenSayfa.style.display = (id === 'hero') ? 'flex' : 'block';
+
+        // Aktif class ekle
         secilenSayfa.classList.add('aktif');
     }
-    
+
+    // Sayfa geçişinde en üste dön
     window.scrollTo(0, 0);
 
-    // Bir sayfaya tıklandığında mobil menü açıksa kapat
+    // Mobil menü açıksa kapat
     const menu = document.getElementById('mobileMenu');
+
     if (menu) {
         menu.classList.remove('active');
-        menu.style.display = 'none'; // Mobilde çakışmayı önlemek için zorla kapat
+        menu.style.display = 'none';
     }
 }
 
-// 3. Hamburger Menü Fonksiyonu
+// Hamburger menüyü aç/kapat
 function menuToggle() {
+
     const menu = document.getElementById('mobileMenu');
-    
-    // Eğer menü şu an gizliyse (display none ise veya active class'ı yoksa)
+
+    if (!menu) return;
+
+    // Menü açıksa kapat
     if (menu.style.display === 'flex') {
+
         menu.style.display = 'none';
         menu.classList.remove('active');
+
     } else {
-        menu.style.display = 'flex'; // Zorla görünür yap
+
+        // Menü kapalıysa aç
+        menu.style.display = 'flex';
         menu.classList.add('active');
     }
 }
 
-// 4. Mobildeki çift tıklama (çakışma) sorununu engellemek için dokunma desteği
-document.addEventListener('DOMContentLoaded', function() {
+// Mobil dokunma desteği
+document.addEventListener('DOMContentLoaded', function () {
+
     const icon = document.querySelector('.menu-icon');
+
     if (icon) {
-        // Dokunma başladığında onclick'in çalışmasını engelleyip sadece fonksiyonu çağırıyoruz
-        icon.addEventListener('touchstart', function(e) {
-            e.preventDefault(); // Bu satır 'gölge' gelip açılmama sorununu çözer
+
+        icon.addEventListener('touchstart', function (e) {
+
+            // Mobilde çift tıklama sorununu önler
+            e.preventDefault();
+
             menuToggle();
-        }, {passive: false});
+
+        }, { passive: false });
     }
 });
